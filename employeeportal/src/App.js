@@ -1,18 +1,19 @@
 import React, { useRef, useState } from 'react'
 import './App.css';
-import Employee from './employee';
 import { Footer } from './Footer';
 import { ThemeContext } from './ThemeContext';
 import Register from './components/Register';
 import Login from './components/Login';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from 'react-router-dom'
-import {Routes} from 'react-router-dom'
 import { Home } from './components/Home';
+import { Header } from './components/Header';
+import Employee from './components/employee';
+import { Profile } from './components/Profile';
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -25,47 +26,24 @@ function App() {
   return (
     <div className="App">
       <ThemeContext.Provider value={{theme, employeeData: {add1: 'Abc', add2: 123567, city: 'Delhi'}}}>
-
+        {/* React router dom v6 */}
         <Router>
-        <Link to="/">Home</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
+        <Header />
 
-          <Routes>
+          <Routes> {/** <Switch> */}
               <Route path='/register' element={<Register />} />
+              {/** <Route path="/register"><Register/></Route> */}
               <Route path='/login' element={<Login />} />
-              <Route path='/' element={<Home />} />
-           </Routes>
+              <Route path='/' element={<Home />}>
+                {/* <Route path=":userName" element={<Home />} /> */}
+              </Route>
+              <Route path="/employees" element={<Employee />}/>
+              <Route path='/employees/:id' element={<Profile />}/>
+           </Routes> {/** <Switch> */}
+           <Footer />
         </Router>
 
-        {/* <Router>
-        <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
 
-        <Switch>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-          
-        </Router> */}
         
         {/* 
                 <input type='text' ref={inputRef}></input>
