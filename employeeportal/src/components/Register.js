@@ -1,4 +1,5 @@
-import { useRef, useState } from "react"
+import axios from "axios"
+import { useState } from "react"
 
 const Register = () => {
 
@@ -6,16 +7,15 @@ const Register = () => {
     const [name, setName] = useState()
     const [password, setPassword] = useState()
 
-    // Ref
-    // const emailRef = useRef()
-    // const nameRef = useRef()
-    // const passwordRef = useRef()
+
 
     const registerHandler = () => {
         console.log("registerHandler called...")
         console.log(email, name, password)
-        //console.log(emailRef, emailRef.current)
-        //console.log(emailRef.current.value, nameRef.current.value, passwordRef.current.value)
+        axios.post("https://reqres.in/api/register", {email, password})
+        .then((res) => {
+            console.log("Register res: ", res)
+        })
     }
     return(
         <div>

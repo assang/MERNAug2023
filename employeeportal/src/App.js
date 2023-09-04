@@ -14,6 +14,7 @@ import { Home } from './components/Home';
 import { Header } from './components/Header';
 import Employee from './components/employee';
 import { Profile } from './components/Profile';
+import { Logout } from './components/Logout';
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -39,6 +40,7 @@ function App() {
               </Route>
               <Route path="/employees" element={<Employee />}/>
               <Route path='/employees/:id' element={<Profile />}/>
+              <Route path='/logout' element={<Logout />}/>
            </Routes> {/** <Switch> */}
            <Footer />
         </Router>
