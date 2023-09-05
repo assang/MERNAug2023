@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 export const Profile = () => {
     const [profileData, setProfiledata] = useState()
-    const {id} = useParams()
+    const {id} = useParams() 
 
     useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/users/"+id)
@@ -13,7 +13,7 @@ export const Profile = () => {
                 setProfiledata(res.data)
             }
         })
-    }, [])
+    }, [id])
 
     
     return(

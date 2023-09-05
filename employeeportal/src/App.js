@@ -15,6 +15,8 @@ import { Header } from './components/Header';
 import Employee from './components/employee';
 import { Profile } from './components/Profile';
 import { Logout } from './components/Logout';
+import checkLogin from './components/checkLogin';
+
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -24,25 +26,25 @@ function App() {
       setTheme(inputRef.current.value)
   }
 
+  const Emp = checkLogin(Employee)
+
   return (
     <div className="App">
       <ThemeContext.Provider value={{theme, employeeData: {add1: 'Abc', add2: 123567, city: 'Delhi'}}}>
         {/* React router dom v6 */}
         <Router>
-        <Header />
-
-          <Routes> {/** <Switch> */}
+          <Header />
+            <Routes> {/** <Switch> */}
               <Route path='/register' element={<Register />} />
-              {/** <Route path="/register"><Register/></Route> */}
               <Route path='/login' element={<Login />} />
               <Route path='/' element={<Home />}>
-                {/* <Route path=":userName" element={<Home />} /> */}
               </Route>
-              <Route path="/employees" element={<Employee />}/>
+              {/* {console.log(new emp())} */}
+              <Route path="/employees" element={<Emp />}/>
               <Route path='/employees/:id' element={<Profile />}/>
               <Route path='/logout' element={<Logout />}/>
-           </Routes> {/** <Switch> */}
-           <Footer />
+            </Routes> {/** <Switch> */}
+          <Footer />
         </Router>
 
 
