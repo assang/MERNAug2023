@@ -1,0 +1,7 @@
+h2.icon {
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+}

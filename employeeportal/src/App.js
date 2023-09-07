@@ -16,7 +16,7 @@ import Employee from './components/employee';
 import { Profile } from './components/Profile';
 import { Logout } from './components/Logout';
 import checkLogin from './components/checkLogin';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -26,7 +26,7 @@ function App() {
       setTheme(inputRef.current.value)
   }
 
-  const Emp = checkLogin(Employee)
+  //const Emp = checkLogin(Employee)
 
   return (
     <div className="App">
@@ -40,7 +40,8 @@ function App() {
               <Route path='/' element={<Home />}>
               </Route>
               {/* {console.log(new emp())} */}
-              <Route path="/employees" element={<Emp />}/>
+              {/* <Route path="/employees" element={<Emp />}/> */}
+              <Route path="/employees" element={checkLogin(Employee)()}/>
               <Route path='/employees/:id' element={<Profile />}/>
               <Route path='/logout' element={<Logout />}/>
             </Routes> {/** <Switch> */}
