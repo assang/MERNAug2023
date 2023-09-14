@@ -39,8 +39,8 @@ export const Home = () => {
     return (
         <div>
         <h1>Welcome to home page, user: {userName} {count}</h1>
-        <button onClick={() => setCount(count+1)}>Click</button>
-        <MemoizedPage onClick={onClick} />
+        {/* <button onClick={() => setCount(count+1)}>Click</button>
+        <MemoizedPage onClick={onClick} /> */}
         {/* Price: {finalPrice()} */}
         </div>
 

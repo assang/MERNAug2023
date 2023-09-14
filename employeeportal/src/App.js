@@ -17,6 +17,8 @@ import { Profile } from './components/Profile';
 import { Logout } from './components/Logout';
 import checkLogin from './components/checkLogin';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
+import store from './store'
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -28,9 +30,12 @@ function App() {
 
   //const Emp = checkLogin(Employee)
 
+  const func = () => {setTheme('lightblue')}
+
   return (
+    <Provider store={store}>
     <div className="App">
-      <ThemeContext.Provider value={{theme, employeeData: {add1: 'Abc', add2: 123567, city: 'Delhi'}}}>
+      <ThemeContext.Provider value={{func: func, theme, employeeData: {add1: 'Abc', add2: 123567, city: 'Delhi'}}}>
         {/* React router dom v6 */}
         <Router>
           <Header />
@@ -57,6 +62,7 @@ function App() {
         <Footer /> */}
       </ThemeContext.Provider>
     </div>
+    </Provider>
   );
 }
 
