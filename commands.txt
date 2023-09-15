@@ -1,0 +1,13 @@
+1. To install all node dependencies
+npm install
+
+2. To install perticular dependency (eg. react-router-dom)
+npm install react-router-dom
+
+3. Install dependency with version
+npm install react-router-dom@6.15.0
+
+4. Uninstall a dependency (eg. react-router-dom)
+npm uninstall react-router-dom
+
+5. ^ means, it will automatically update with new version when you do npm install

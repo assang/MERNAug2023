@@ -1,0 +1,15 @@
+1. useState
+2. useEffect
+3. useContext
+4. useRef
+5. useParams - (react-router-dom)
+6. useMemo 
+7. useCallback 
+
+useMemo vs useCallback
+1. useMemo returns value, useCallback return function
+2. memoized value, memoized function
+3. useMemo value can be used directly in render, useCallback function should be called to get value
+
+
+8. useSelector - (Redux)

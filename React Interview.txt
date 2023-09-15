@@ -1,0 +1,74 @@
+1. What is react JS?
+- React JS is a light weight JavaScript library used to develop different types of web application. It provides state management and helps create SPA.
+
+2. Advatages of React JS?
+- a. Create Single Page Application
+  b. Flexible to maintaince the code.
+  c. Reusable components
+  d. JSX - helps writing code easy with mix of JS and HTML
+  e. Being light weight help improve performance
+  f. State and Props
+  g. Stateful and Stateless components
+  h. The Support of Handy Tools - npmjs
+  i. Being JS you can integrate other JS libraries
+
+3. What are disadvantages of React?
+- a. Not a full framework
+  b. Frequently realeased versions
+  c. Hard to learn
+  d. Not suitable complex application
+  e. Depenecy on other packages
+
+4. State and Props
+- a. Props to pass the data from parent to child, state hold data for self component
+  b. State is mutable and props immutable
+  c. state update re-renders component, props do not by default
+
+5. Stateful and Stateless
+Stateful component should contain state and stateless should'nt. Stateful render on every update, stateless do not.
+
+6. What are hooks and give two examples?
+Hooks are predefined feature provided by react to implement in our component. It help us develop different features easily.
+useState - Helps create state variable and a function to set value of that variable
+useEffect - Helps control the application actions based on component lifecycle phase such as mount, update and unmount.
+useMemo - To save a logic in memory and use that same reference for further executions.
+
+7. Content API
+To provide small amount of data from one component to others. It helps resolve props chain problem. It has Provider and useContext hook as consumer.
+Provide provides value and useContext/Consumer consumes data.
+
+8. What is props chain problem?
+When you pass data from parent to child and further to grand child component. In case of update in any component will cause re-rendring which reduce performace, is nothing but props chain problem.
+
+9. Explain react-router-dom
+React router dom is a npm package help us create routing/navigation between component/pages by following SPA rule (should not refresh to re-render).
+It provides BrowserRouter, Link, Routes, Route in order to create links and route components to its link.
+
+10. Higher Order Component
+HOCs are components which accepts components as parameter and returns enhanced component. Example Router, Auth.
+
+11. What are references?
+createRef, useRef helps create a reference to attach to an element to further access it to update or read DOM.
+
+12. How react updates DOM?
+Reconciliation feature in react helps react decide when to re-render the perticular component when change occurs. It compares the old state of application and updated state of application if difference found then it re-renders that component.
+
+13. Difference between Real DOM and Virtual DOM
+Real DOM is nothing but present document in the browser which we can see. Virtual DOM is copy of Real DOM present behind the real DOM. Helps react compare and update DOM.
+
+14. React lifecyle 
+Mounting, Updating and Unmounting are phases. componentDidMount, componentDidUpdate, componentWillUnmount etc. are lifecycle methods. Hooks help perform similar action in functional component. (useEffect)
+
+15. What is Redux and explain its structure
+Redux is a library for statement management. It provides store to store the data which can be accessed and modified from any components using hooks such as useSelector and useDispatch.
+a. Store
+b. Slice - name of slice, intial state, reducers
+c. useSelector - to read data from store
+d. useDispatch - to dispatch an action from component in order to execute some login using reducer.
+e. connect method and its parameters (mapStateToProps, mapDispatchToProps) helps read store data and dispatch actions in class componenet.
+
+
+16. What is axios/ how to fetch API/ how to communicate with server
+fetch, axios and similar package helps comminucate with server/API, it provide different communication methods such as GET, POST, DELETE etc.
+
+

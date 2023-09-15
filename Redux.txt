@@ -1,0 +1,9 @@
+Redux
+Store
+Action
+Reducer
+Dispatcher
+Selector
+
+installation - npm install @reduxjs/toolkit react-redux
+
