@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
     if (req.url === "/api" && req.method === "GET") {  // create end points and use on client
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
-        res.end('Hellow World!')
+        res.end('Hello World!')
     } else {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');

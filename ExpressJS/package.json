@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for test",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index",
+    "test": "no"
+  },
+  "keywords": [
+    "test",
+    "app"
+  ],
+  "author": "Sarang",
+  "license": "ISC"
+}
