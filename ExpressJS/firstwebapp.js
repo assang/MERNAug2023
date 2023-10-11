@@ -1,22 +1,20 @@
 const express = require('express')
-const fs = require('fs')
-const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
+const fs = require('fs')
+const app = express()
 
 // middleware
-app.use(express.static('public'))
+app.use(express.static('public')) // html, css, images, svg, video, audios 
 app.use('/static', express.static(path.join("./", 'public')))
+app.use(bodyParser.urlencoded({ extended: false }))
 
-function readAndServe(path, res)   
-{
-    fs.readFile(path,function(err, data)
-    {
-          res.end(data);
+// util function
+function readAndServe(path, res) {
+    fs.readFile(path, function (err, data) {
+        res.end(data);
     })
 }
-
-app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
     res.sendFile('./index.html')
@@ -24,18 +22,21 @@ app.get('/', (req, res) => {
 
 app.get('/static/contact', (req, res) => {
     const url = req.url;
-      const method = req.method;
-      
-      if(url === "/static/contact") 
-      {
-          readAndServe("./public/contact.html",res) 
-      }
-    
-      if(url === "/static/about") {
-        readAndServe("./public/about.html",res) 
-      }
-    
-    })
+    const method = req.method;
+
+    if (url === "/static/contact") {
+        readAndServe("./public/contact.html", res)
+    }
+})
+
+app.get('/static/about', (req, res) => {
+    const url = req.url;
+    const method = req.method;
+
+    if (url === "/static/about") {
+        readAndServe("./public/about.html", res)
+    }
+})
 
 app.post('/submit-student-data', (req, res) => {
     let fullName = req.body.firstName + " " + req.body.lastName
@@ -44,6 +45,7 @@ app.post('/submit-student-data', (req, res) => {
 
 app.post('/submit-contact', (req, res) => {
     let request = req.body.question + " <br/> " + req.body.description
+    // save the data in database
     res.send("We received your request with these details : " + request)
 })
 
