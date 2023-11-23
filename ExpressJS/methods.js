@@ -15,6 +15,12 @@ app.get('/api/users', (req, res) => {
      res.json(users)
 })
 
+// accepting url params
+app.get('/api/users/:name', (req, res) => {
+    //console.log(req.params)
+    res.send(users.filter((user) => user.name === req.params.name))
+})
+
 // Registration
 app.post('/api/users', (req, res) => {
     console.log(req.body.name, req.body.salary)

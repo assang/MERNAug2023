@@ -1,0 +1,14 @@
+{
+  "name": "add",
+  "version": "1.0.0",
+  "description": "Unit test",
+  "main": "add.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "should": "^13.2.3"
+  }
+}
